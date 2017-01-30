@@ -1,0 +1,30 @@
+name: All your Base R belong to us!!!!
+spring:
+  profile: default
+  application:
+    name: medication-load
+  datasource: 
+    url: jdbc:mysql://localhost:3306/phpdb
+    username: abbyuser
+    password: password
+    driverClassName: com.mysql.jdbc.Driver
+    testWhileIdle: true
+    validationQuery: SELECT 1
+  jpa:
+    show-sql: false
+    hibernate: 
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+        hibernate: 
+            dialect: org.hibernate.dialect.MySQL5Dialect
+tii:
+  microservices:
+    campaign-id: 1
+    auth: 562b1f88-b5ab-4100-99cf-d53849b31974
+    url: http://microservices-dev.abbycloud.com:8765
+    activiti:
+      process-definition-id: myProcess_1:9:32600
+# HTTP Server
+server:
+  port: 8083   # HTTP (undertow) port
